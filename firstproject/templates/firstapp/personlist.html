@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    body{
+     background:teal;
+     color:white;
+    }
+    th,td{
+    padding:10px;
+    }
+  </style>
+</head>
+<body>
+  {% if person_list %}
+  <table border="2" align="center">
+    <thead style="text-align:center;color:whitesmoke;font-weight:bold;font-size:20px;">
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Phone Number</th>
+    <th>Address</th>
+    </thead>
+    {% for list in person_list%}
+    <tr>
+      <td>{{list.fname}}</td>
+      <td>{{list.lname}}</td>
+      <td>{{list.phoneno}}</td>
+      <td>{{list.address}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% else %}
+<p>No Records found</p>
+{% endif %}
+</body>
+</html>
